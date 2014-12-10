@@ -1,0 +1,178 @@
+#main {
+    width: 930px;
+    margin: 0 auto;
+    padding: 0px 35px;
+}
+
+#main p, #main form {
+    padding: 0 20px;
+}
+
+#main h2 {
+    color: #2665ac;
+    padding: 0 20px;
+}
+
+
+#main .list ul {
+    position: relative;
+    display: block;
+    left: 20px;
+}
+li {
+    list-style: url('/img/marker.png');
+}
+
+span.error {
+    color: red;
+    font-size: 90%;
+}
+
+.leftblock {
+    float: left;
+	width: 250px;
+	padding:30px 0;
+}
+.menuphone {
+	display: block;
+	width: 250px;
+	text-align: center;
+	font-size: 165%;
+	font-weight: bold;
+}
+.menusocial {
+	display: block;
+	width: 250px;
+	text-align: center;
+	margin-top:15px
+}
+.menusocial .social-link {
+	margin:0 5px;
+}
+.block-zakaz, .block-otziv {
+	display: block;
+	width: 240px;
+	background: url(/img/blockbbg.png) 3px bottom no-repeat;
+	padding: 0 0 10px 0;
+	margin: 15px -10px 15px 0;
+}
+.block-zakaz {margin-top:95px}
+
+.block-zakaz h3, .block-otziv h3 {
+	display: block;
+	width: 254px;
+	height: 34px;
+	background: url(/img/plashka-kruglaya.png) top left no-repeat;
+	color: white;
+	padding: 11px 0 0 0;
+	margin: 0;
+	text-align: center;
+}
+#main .block-zakaz p.blockcontent, #main .block-otziv p.blockcontent {
+	display: block;
+	width: 212px;
+	height: 100px;
+	background: #e7e7e7;
+	padding: 0 0px;
+	margin: 0 0 0 3px;
+	font-size:10px;
+}
+.rightblock {
+	float: right;
+	width: 650px;
+	padding:10px 0 30px 0;
+	margin:20px 0 0 0;
+}
+.rightblock p{
+	text-align: justify;
+}
+.rightblock .headerline {
+	width:650px;
+	height:80px;
+	background: url(/img/headertitleline2.png) center left repeat-x;
+}
+
+#partnershead {
+	height:80px;
+	background-color:#FFF;
+	margin:0 auto;
+}
+.uborshik {display:block;width:210px;margin:0 0 0 6px  ;float:left;}
+.uborshik-last {display:block;width:210px;margin-left:6px;height:350px;float:left;}
+
+.uborshik-p {padding:0;text-align:justify;margin:-17px;font-size:9pt}
+.uborshik-h4 {text-align:center;}
+label {font-size:10pt}
+
+.uborka-div{width:305px;float:left;margin:0 0 20px 20px;font-size:10pt}
+.uborka-div a{font-size:13pt;font-weight:bold}
+.uborka-div img {width:305px}
+
+#breadcrum li {float:left;list-style-type:none;list-style-image:none}
+#breadcrum li + li:before{
+  content:  '>';
+  margin:   0 2px;
+}
+
+
+.ZagolovokLogo {
+	float:left;
+	width:75px;
+	height:75px}
+.Zagolovok {
+	text-transform:uppercase;
+	font-size:30pt;
+	padding:10px 10px 10px 0;
+	text-align:right;}
+
+.otziv-like     {display:block;width:650px;height:149px;background:url(/img/1000px/otz-back.jpg) no-repeat;margin-bottom:15px}
+.otziv-like img {float:left;margin:18px 40px 0 18px;width:70px;height:70px;}
+.otziv-like h3  {color:#537aae;display:block;margin:22px 0 5px -10px;float:left;width:400px;height:50px;}
+.otziv-like p   {display:block;width:400px;float:left;margin:-45px 0 0 100px;padding:0;font-size:10pt;}
+
+h2 {color:black !important}
+h1.Zagolovok{color:#333333 !important}
+
+#breadcrum li + li:before{
+  content:  '   / ';
+  margin:   0 4px 0 4px;
+  color:;
+}
+
+#breadcrum li a{color:#e5625c}
+
+.headerline {margin:0 0 20px 0;}
+
+.h1_change {
+	text-align: right;
+	border-bottom: 3px solid #000;
+}
+
+.h3_change_white {
+	margin: 15px 0 10px 0;
+	color: #FFF;
+	font-size: 1.17em;
+	font-weight: bold;
+}
+
+#main .h3_change_black {
+	font-size: 20px;
+	font-weight: bold;
+	display: block;
+	width: 254px;
+	height: 34px;
+	background: url(/img/plashka-kruglaya.png) top left no-repeat;
+	color: white;
+	padding: 11px 0 0 0;
+	margin: 0;
+	text-align: center;
+}
+
+
+.photo_plus .fade{
+   background: url('/img/cross_small_bg.png');
+    display: none;
+    width:205px;
+    height: 137px;
+    position: absolute;
+}
