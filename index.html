@@ -24,32 +24,7 @@
         <link rel="stylesheet" href="css1000/price_stuff.css">
 
 		<base href="http://www.bleskuborka.ru/" />
-		<style type="text/css">
-			header {background: url('/img/headbc4.jpg') center bottom no-repeat;}
-            .oldmain {margin-left:127.5px;margin-right:127.5px;}
-            .comment {font-size: small;color:#777777;font-style: italic;}
-            .specialoffer {
-                font-size: small;
-                color:#75aa60;
-                font-style: italic;
-                margin:0;
-                padding:0;
 
-            }
-            .priceheader {
-                background-color: #f8dd00;border-color: #f8dd00;
-            }
-            .priceheader-green {
-                background-color: #98de79;border-color: #98de79;
-            }
-            .reg-cl-align {
-                vertical-align: middle;
-            }
-
-
-
-
-        </style>
 
 
 <div id="fb-root"></div>
@@ -106,7 +81,7 @@ window.ConveadSettings = {
 			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 		<![endif]-->
 
-		<div id="topplah" style="width:100%;height:90px;margin:-70px 0 0 0;display:block;float:left;background: url('/img/1000px/graytop.png') repeat-x;min-width:1000px;"></div>
+		<div id="topplah" style="width:100%;height:90px;margin:-70px 0 0 0;display:block;float:left;background: url('img/1000px/graytop.png') repeat-x;min-width:1000px;"></div>
 
 
 		<div class="wrapper">	
@@ -198,11 +173,75 @@ document.write('</ul>');
   </div>
   	<div class="rightblock" style="text-align:justify">
 	  <div class="headerline">
-		  <div id="partnershead" style="width:210px;">
+		  <div id="partnershead" style="width:410px;">
 			  <img src="/img/h1_sheets.png" class="ZagolovokLogo" alt="Цены - клининговая компания Блеск" />
-				  <h1 class="Zagolovok" >Цены</h1>
+				  <h1 class="Zagolovok" >Цены на уборку</h1>
 		  </div>
 	  </div>
+
+
+<style>
+
+    header {background: url('/img/headbc4.jpg') center bottom no-repeat;}
+
+    .oldmain {margin-left:127.5px;margin-right:127.5px;}
+    .comment {font-size: small;color:#777777;font-style: italic;}
+    .specialoffer {
+        font-size: small;
+        color:#75aa60;
+        font-style: italic;
+        margin:0;
+        padding:0;
+
+    }
+
+
+    .pricetable tbody tr:first-child {
+        background-color: #f8dd00;border-color: #f8dd00;
+    }
+
+    .pricetable tbody tr:first-child td {
+        background-color: inherit;border-color: inherit;
+    }
+
+    .pricecol {
+        text-align: right;
+        width:65px;
+    }
+
+    .priceheader-green {
+        background-color: #98de79;border-color: #98de79;
+    }
+    .reg-cl-align {
+        vertical-align: middle;
+    }
+
+    .warning-comment {
+        color:red;
+        font-size: small;
+        font-style:italic
+    }
+
+    .subheader {
+        background-color: #f8dd00;border-color: #f8dd00;
+    }
+
+
+
+    h2.prices {
+        font-size: 22px
+    }
+
+    table > tbody > tr > td.officecol {
+        text-align:right;
+        background-color: inherit;
+        border-color: inherit;
+        vertical-align: middle;
+    }
+
+</style>
+
+
 
 
 
@@ -210,7 +249,7 @@ document.write('</ul>');
 <ul class="nav nav-tabs" role="tablist" id="myTab">
     <li role="presentation" class="active"><a href="#kvartira" aria-controls="kvartira" role="tab" data-toggle="tab">Квартира</a></li>
 
-    <li role="presentation"><a href="#zagorodnydom" aria-controls="zagorodnydom" role="tab" data-toggle="tab">Загородный дом</a></li>
+  <!--  <li role="presentation"><a href="#zagorodnydom" aria-controls="zagorodnydom" role="tab" data-toggle="tab">Загородный дом</a></li>   -->
     <li role="presentation"><a href="#ofis" aria-controls="ofis" role="tab" data-toggle="tab">Офис</a></li>
     <li role="presentation"><a href="#regularnaya" aria-controls="regularnaya" role="tab" data-toggle="tab">Ежедневная уборка</a></li>
 </ul>
@@ -226,30 +265,30 @@ document.write('</ul>');
 
 
 
-        <h3><span style="font-size: 1.17em; line-height: 1.5em;">Уборка квартир - цены</span></h3>
+        <h2 class="prices">Уборка квартир - цены</h2>
 
-        <table class="table table-bordered table-striped table-hover">
+        <table class="table table-bordered table-striped table-hover pricetable">
             <tbody>
                 <tr class="priceheader">
-                    <td style="background-color: inherit;border-color: inherit"></td>
-                    <td align="right" style="background-color: inherit;border-color: inherit">
+                    <td></td>
+                    <td class="pricecol">
 
                         1 комн<br/>
                         <span class="comment">30-40 м<sup>2</sup></span>
                     </td>
-                    <td width="65" align="right" style="background-color: inherit;border-color: inherit">
+                    <td class="pricecol">
                         2 комн<br/>
                         <span class="comment">40-60 м<sup>2</sup></span>
                     </td>
-                    <td width="65" align="right" style="background-color: inherit;border-color: inherit">
+                    <td class="pricecol">
                         3 комн<br/>
                         <span class="comment">60-90 м<sup>2</sup></span>
                     </td>
-                    <td width="65" align="right" style="background-color: inherit;border-color: inherit">
+                    <td class="pricecol">
                         4 комн<br/>
                         <span class="comment">70-100 м<sup>2</sup></span>
                     </td>
-                    <td width="65" align="right" style="background-color: inherit;border-color: inherit">
+                    <td class="pricecol">
                         > 4 комн<br/>
                         <span class="comment">> 100 м<sup>2</sup></span>
                     </td>
@@ -299,7 +338,7 @@ document.write('</ul>');
                                         <li>уборка строительного мусора</li>
                                         <li>молотков, гвоздей, пятен крови</li>
                                         <li>и всего прочего, что остается после ремонта</li>
-                                        <li><a title="уборка после ремонта" href="services/uborka-posle-remonta.html">Уборка после ремонта</a></li>
+                                        <li><a title="уборка после ремонта" href="services/uborka-posle-remonta.html">Уборка после ремонта - цена</a></li>
 
 
                                     </ul>
@@ -378,8 +417,8 @@ document.write('</ul>');
                 </tr>
 
 
-                <tr class="priceheader">
-                    <td colspan="6" style="background-color: inherit;border-color: inherit">Горничная на дом<br/>
+                <tr>
+                    <td colspan="6" style="background-color: #f8dd00;border-color: #f8dd00;">Горничная на дом<br/>
                         <span class="comment">
                             <p style="padding:0">
                                 Ежедневная помощь по дому, мытье посуды, уборка,
@@ -412,8 +451,8 @@ document.write('</ul>');
                 </tr>
 
 
-                <tr class="priceheader">
-                    <td colspan="6" style="background-color: inherit;border-color: inherit">Курьер<br/>
+                <tr>
+                    <td colspan="6"  style="background-color: #f8dd00;border-color: #f8dd00;">Курьер<br/>
                         <span class="comment">
                             <p style="padding:0">
                                 Единовременно забрать/отвезти химчистку,
@@ -438,13 +477,15 @@ document.write('</ul>');
             </tbody>
         </table>
 
-        <br/><br/>
+        <br/>
+        <h3>Дополнительные услуги на уборку квартиры - стоимость на 1.12.2014</h3>
+        <br/>
 
 
-        <table class="table table-bordered table-striped table-hover">
+        <table class="table table-bordered table-striped table-hover pricetable">
             <tbody>
             <tr class="priceheader">
-                <td colspan="2" style="background-color: inherit;border-color: inherit">Дополнительные услуги</td>
+                <td colspan="2">Дополнительные услуги</td>
 
             </tr>
             <tr>
@@ -488,15 +529,15 @@ document.write('</ul>');
             </tbody>
         </table>
 
-        <p style="color:red;font-size: small;font-style:italic">* При заказе менее чем за 16 часов до желаемого времени доплата за срочность составляет 30% от стоимости заказа</p>
+        <p class="warning-comment">* При заказе менее чем за 16 часов до желаемого времени доплата за срочность составляет 30% от стоимости заказа</p>
 
         <br/><br/>
 
 
-        <table class="table table-bordered table-striped table-hover">
+        <table class="table table-bordered table-striped table-hover pricetable">
             <tbody>
             <tr class="priceheader">
-                <td colspan="2" style="background-color: inherit;border-color: inherit">
+                <td colspan="2">
                     <a title="мытье окон и витрин" href="services/moyka-okon-i-vitrin.html">Мытье окон - цены</a>
                 </td>
 
@@ -544,7 +585,7 @@ document.write('</ul>');
 
     <div role="tabpanel" class="tab-pane fade" id="ofis">
 
-        <h3><span style="font-size: 1.17em; line-height: 1.5em;">Уборка офисов - цены</span></h3>
+        <h2 class="prices">Уборка офисов - цены</h2>
 
 
         <br/>
@@ -563,32 +604,32 @@ document.write('</ul>');
 
 
 
-        <table class="table table-bordered table-striped table-hover">
+        <table class="table table-bordered table-striped table-hover pricetable">
             <tbody>
-            <tr class="priceheader">
-                <td style="background-color: inherit;border-color: inherit" width="300"></td>
-                <td align="right" style="background-color: inherit;border-color: inherit;vertical-align: middle">до 100 м<sup>2</sup></td>
-                <td align="right" style="background-color: inherit;border-color: inherit;vertical-align: middle">100-200 м<sup>2</sup></td>
-                <td align="right" style="background-color: inherit;border-color: inherit;vertical-align: middle">от 200 м<sup>2</sup></td>
+            <tr>
+                <td width="300"></td>
+                <td class="officecol">до 100 м<sup>2</sup></td>
+                <td class="officecol">100-200 м<sup>2</sup></td>
+                <td class="officecol">от 200 м<sup>2</sup></td>
 
             </tr>
             <tr>
                 <td>1 раз/2 недели</td>
-                <td align="right" style="vertical-align: middle">4400</td>
-                <td align="right" style="vertical-align: middle">звоните</td>
-                <td align="right" style="vertical-align: middle">звоните</td>
+                <td  class="officecol">4400</td>
+                <td class="officecol">звоните</td>
+                <td class="officecol">звоните</td>
             </tr>
             <tr>
                 <td>1 раз/в неделю</td>
-                <td align="right" style="vertical-align: middle">6600</td>
-                <td align="right" style="vertical-align: middle">звоните</td>
-                <td align="right" style="vertical-align: middle">звоните</td>
+                <td class="officecol">6600</td>
+                <td class="officecol">звоните</td>
+                <td class="officecol">звоните</td>
             </tr>
             <tr>
                 <td>2 раза/в неделю</td>
-                <td align="right" style="vertical-align: middle">6600</td>
-                <td align="right" style="vertical-align: middle">звоните</td>
-                <td align="right" style="vertical-align: middle">звоните</td>
+                <td class="officecol">6600</td>
+                <td class="officecol">звоните</td>
+                <td class="officecol">звоните</td>
             </tr>
 
 
@@ -599,9 +640,9 @@ document.write('</ul>');
                         Специальное предложение!
                     </span>
                 </td>
-                <td align="right" style="vertical-align: middle">10000</td>
-                <td align="right" style="vertical-align: middle">18000</td>
-                <td align="right" style="vertical-align: middle">32000</td>
+                <td class="officecol">10000</td>
+                <td class="officecol">18000</td>
+                <td class="officecol">32000</td>
             </tr>
             <tr>
                 <td>
@@ -610,9 +651,9 @@ document.write('</ul>');
                         Специальное предложение!
                     </span>
                 </td>
-                <td align="right" style="vertical-align: middle">15000</td>
-                <td align="right" style="vertical-align: middle">25000</td>
-                <td align="right" style="vertical-align: middle">55000</td>
+                <td class="officecol">15000</td>
+                <td class="officecol">25000</td>
+                <td class="officecol">55000</td>
             </tr>
             <tr>
                 <td>
@@ -621,9 +662,9 @@ document.write('</ul>');
                         Специальное предложение!
                     </span>
                 </td>
-                <td align="right" style="vertical-align: middle">28000</td>
-                <td align="right" style="vertical-align: middle">48000</td>
-                <td align="right" style="vertical-align: middle">85000</td>
+                <td class="officecol">28000</td>
+                <td class="officecol">48000</td>
+                <td class="officecol">85000</td>
             </tr>
 
             </tbody>
@@ -645,7 +686,7 @@ document.write('</ul>');
 
         </ul>
 
-        <table class="table table-bordered table-striped table-hover">
+        <table class="table table-bordered table-striped table-hover pricetable">
             <tbody>
             <tr class="priceheader">
                 <td colspan="2" style="background-color: inherit;border-color: inherit">
@@ -681,30 +722,30 @@ document.write('</ul>');
 
 
 
-        <h3><span style="font-size: 1.17em; line-height: 1.5em;"><a title="ежедневная уборка" href="services/ejenevnaya-uborka.html">Ежедневная уборка - цены</a></span></h3>
+        <h2 class="prices">Ежедневная уборка - цены</h2>
 
-        <table class="table table-bordered table-striped table-hover">
+        <table class="table table-bordered table-striped table-hover pricetable">
             <tbody>
                 <tr class="priceheader">
                     <td style="background-color: inherit;border-color: inherit"></td>
-                    <td width="65" align="right" style="background-color: inherit;border-color: inherit">
+                    <td class="pricecol">
 
                         1 комн<br/>
                         <span class="comment">30-40 м<sup>2</sup></span>
                     </td>
-                    <td width="65" align="right" style="background-color: inherit;border-color: inherit">
+                    <td class="pricecol">
                         2 комн<br/>
                         <span class="comment">40-60 м<sup>2</sup></span>
                     </td>
-                    <td width="65" align="right" style="background-color: inherit;border-color: inherit">
+                    <td class="pricecol">
                         3 комн<br/>
                         <span class="comment">60-90 м<sup>2</sup></span>
                     </td>
-                    <td width="65" align="right" style="background-color: inherit;border-color: inherit">
+                    <td class="pricecol">
                         4 комн<br/>
                         <span class="comment">70-100 м<sup>2</sup></span>
                     </td>
-                    <td width="65" align="right" style="background-color: inherit;border-color: inherit">
+                    <td class="pricecol">
                         > 4 комн<br/>
                         <span class="comment">> 100 м<sup>2</sup></span>
                     </td>
@@ -714,95 +755,96 @@ document.write('</ul>');
                     <td>Чистота<br/>
                         <span class="comment">(2 р в мес)</span>
                     </td>
-                    <td align="right" style="vertical-align: middle">4300</td>
-                    <td align="right" style="vertical-align: middle">5300</td>
-                    <td align="right" style="vertical-align: middle">5700</td>
-                    <td align="right" style="vertical-align: middle">6500</td>
-                    <td align="right" style="vertical-align: middle">7100</td>
+                    <td class="officecol">4300</td>
+                    <td class="officecol">5300</td>
+                    <td class="officecol">5700</td>
+                    <td class="officecol">6500</td>
+                    <td class="officecol">7100</td>
                 </tr>
                 <tr>
                     <td>Холостяк<br/>
                         <span class="comment">(4 р в мес)</span>
                     </td>
-                    <td align="right" style="vertical-align: middle">7920</td>
-                    <td align="right" style="vertical-align: middle">9720</td>
-                    <td align="right" style="vertical-align: middle">10440</td>
-                    <td align="right" style="vertical-align: middle">11880</td>
-                    <td align="right" style="vertical-align: middle">12960</td>
+                    <td class="officecol">7920</td>
+                    <td class="officecol">9720</td>
+                    <td class="officecol">10440</td>
+                    <td class="officecol">11880</td>
+                    <td class="officecol">12960</td>
                 </tr>
                 <tr>
                     <td>Турбохолостяк<br/>
                         <span class="comment">(4 р в мес + ген.уборка)</span>
                     </td>
-                    <td align="right" style="vertical-align: middle">9450</td>
-                    <td align="right" style="vertical-align: middle">12060</td>
-                    <td align="right" style="vertical-align: middle">13590</td>
-                    <td align="right" style="vertical-align: middle">15660</td>
-                    <td align="right" style="vertical-align: middle">17730</td>
+                    <td class="officecol">9450</td>
+                    <td class="officecol">12060</td>
+                    <td class="officecol">13590</td>
+                    <td class="officecol">15660</td>
+                    <td class="officecol">17730</td>
                 </tr>
                 <tr>
                     <td>Домохозяйка<br/>
                         <span class="comment">(4 р в мес + глажка)</span>
                     </td>
-                    <td align="right" style="vertical-align: middle">7920</td>
-                    <td align="right" style="vertical-align: middle">9720</td>
-                    <td align="right" style="vertical-align: middle">10440</td>
-                    <td align="right" style="vertical-align: middle">11880</td>
-                    <td align="right" style="vertical-align: middle">12960</td>
+                    <td class="officecol">7920</td>
+                    <td class="officecol">9720</td>
+                    <td class="officecol">10440</td>
+                    <td class="officecol">11880</td>
+                    <td class="officecol">12960</td>
                 </tr>
                 <tr>
                     <td>Дом. питомец<br/>
                         <span class="comment">(4 р в мес + уборка шерсти)</span>
                     </td>
-                    <td align="right" style="vertical-align: middle">9450</td>
-                    <td align="right" style="vertical-align: middle">12060</td>
-                    <td align="right" style="vertical-align: middle">13590</td>
-                    <td align="right" style="vertical-align: middle">15660</td>
-                    <td align="right" style="vertical-align: middle">17730</td>
+                    <td class="officecol">9450</td>
+                    <td class="officecol">12060</td>
+                    <td class="officecol">13590</td>
+                    <td class="officecol">15660</td>
+                    <td class="officecol">17730</td>
                 </tr>
                 <tr>
                     <td>Big family<br/>
                         <span class="comment">(4+2)</span>
                     </td>
-                    <td align="right" style="vertical-align: middle">11880</td>
-                    <td align="right" style="vertical-align: middle">14580</td>
-                    <td align="right" style="vertical-align: middle">15660</td>
-                    <td align="right" style="vertical-align: middle">17820</td>
-                    <td align="right" style="vertical-align: middle">19440</td>
+                    <td class="officecol">11880</td>
+                    <td class="officecol">14580</td>
+                    <td class="officecol">15660</td>
+                    <td class="officecol">17820</td>
+                    <td class="officecol">19440</td>
                 </tr>
                 <tr>
                     <td>Блеск<br/>
                         <span class="comment">(8 р в мес)</span>
                     </td>
-                    <td align="right" style="vertical-align: middle">14080</td>
-                    <td align="right" style="vertical-align: middle">17280</td>
-                    <td align="right" style="vertical-align: middle">18560</td>
-                    <td align="right" style="vertical-align: middle">21120</td>
-                    <td align="right" style="vertical-align: middle">23040</td>
+                    <td class="officecol">14080</td>
+                    <td class="officecol">17280</td>
+                    <td class="officecol">18560</td>
+                    <td class="officecol">21120</td>
+                    <td class="officecol">23040</td>
                 </tr>
                 <tr>
                     <td>Все включено<br/>
                         <span class="comment">(8 р в мес + глажка + обувь)</span>
                     </td>
-                    <td align="right" style="vertical-align: middle">15840</td>
-                    <td align="right" style="vertical-align: middle">19440</td>
-                    <td align="right" style="vertical-align: middle">20880</td>
-                    <td align="right" style="vertical-align: middle">23760</td>
-                    <td align="right" style="vertical-align: middle">25920</td>
+                    <td class="officecol">15840</td>
+                    <td class="officecol">19440</td>
+                    <td class="officecol">20880</td>
+                    <td class="officecol">23760</td>
+                    <td class="officecol">25920</td>
                 </tr>
                 <tr>
                     <td>Конструктор<br/>
                         <span class="comment"> (10 р в 1.5 мес)</span>
                     </td>
-                    <td align="right" style="vertical-align: middle">15400</td>
-                    <td align="right" style="vertical-align: middle">18900</td>
-                    <td align="right" style="vertical-align: middle">20300</td>
-                    <td align="right" style="vertical-align: middle">23100</td>
-                    <td align="right" style="vertical-align: middle">25200</td>
+                    <td class="officecol">15400</td>
+                    <td class="officecol">18900</td>
+                    <td class="officecol">20300</td>
+                    <td class="officecol">23100</td>
+                    <td class="officecol">25200</td>
                 </tr>
             </tbody>
         </table>
-
+        <br/>
+         <p><a title="ежедневная уборка" href="services/ejenevnaya-uborka.html" style="text-decoration: underline">Ежедневная уборка - цены</a></p>
     </div>
 
 

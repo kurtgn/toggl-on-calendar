@@ -343,7 +343,7 @@ footer {
     background: #A9A9A9; /*#e49400;*/
     font-size: 90%;
 	padding: 35px 35px;
-background: url('/img/1000px/foot.png');
+background: url('img/1000px/foot.png');
 }
 footer .footaddress, footer li a {color:#fff}
 #mytestfooter {
