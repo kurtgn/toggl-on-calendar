@@ -2,132 +2,45 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+  
   <title></title>
     <style>
-        body { background: url(background.JPG) no-repeat center right fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover; 
+        body {
+       
         }
-
-        
-        .rightcol {
-            
-            position:absolute;
-            background-color:rgba(0,0,0,.7);
-            top:110px;
-            right:70px;
-            width:200px;
-            
+        .input-error {
+            background-color: red;
         }
-        .contacts {
-            color: white;
-            font-family: 'Roboto', sans-serif;
-            font-size: 18px;
-            text-shadow: 1px 2px 1px #333;
-            background-color:rgba(255,255,255,.12);
-            padding:10px;
-        }
-        
-        .contacts p {
-            
-            margin:0;
-            font-weight:100;
-            margin-bottom:5px;
-            
-        }
-        
-        .leftcol {
-            
-            position:absolute;
-            background-color:rgba(0,0,0,.7);
-            top:80px;
-            left:60px;
-            width:40%;
-        
-        }
-        
-        .leftcol p {
-            padding:10px;
-            color: white;
-            background-color:rgba(255,255,255,.12);
-            font-family: 'Roboto', sans-serif;
-            font-weight:100;
-            font-size: 18px;
-            text-shadow: 1px 2px 1px #333;
-            margin-top:30px;
-            margin-bottom:0
-        }
-        
-        a {
-            color:white;
-            text-decoration: none;
-            
-        }
-        
-        a:hover {
-            text-decoration: underline
-        }
-        
-        .colored {
-            color:yellow;
-            font-weight:500;
-        }
-        
-        .iphonecontacts {
-            display:none;
-        }
-        @media(max-width:600px) {
-            
-            .iphonecontacts {
-                display:block;
-            }
-            .rightcol {
-                display:none;    
-            }
-            .leftcol {
-                top:30px;
-                left:10%;
-                width:80%;
-            }
-        
-        }
-        
-        
-        
+      
     </style>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:500,100' rel='stylesheet' type='text/css'>
+    
     </head>
 <body>
-    <div class="leftcol">
-        <p>
-            <span class="colored">WWET - WorldWide Expo Tour</span> is a serie of expositions of ‘the Huge Drawings Series’ & workshops.
-        </p>
-        <p>
-        I started WWET on DEC 12 2014 in Saint-Petersbourg and want to go through some cities of this world in order to show off my projects and to collaborate with you guys !
-        </p>
-        <p>You really ARE welcome to get in touch and to help me out with this IDEA !<br/><br/>Yeah !</p>
-        <p class="iphonecontacts">
-            <span class="colored">Get in touch:</span><br/><br/>
-            <a href="http://serjkirchano.com">serjkirchano.com</a><br/>
-            <a href="https://facebook.com/profile.php?id=356823547835591">Facebook</a><br/>
-            <a href="mailto:serj@wwet.info">serj@wwet.info</a><br/>
-            
-        </p>
-       
-    </div>
     
-    <div class="rightcol">
-        <div class="contacts">
-            <p><span class="colored">Get in touch:</span></p><br/>
-            <p><a href="http://serjkirchano.com">serjkirchano.com</a>
-            <p><a href="https://facebook.com/profile.php?id=356823547835591">facebook</a></p>
-            <p><a href="mailto:serj@wwet.info">serj@wwet.info</a></p>
-        </div>
-    </div>
+    <input type='text' name='text' id='intext' class="">
+    <button type='button' id='button'>ок</button>
     
 
+    <script src="jquery.js"></script>
+    <script>
+        
+    
+    $(document).ready(function(){
+    
+        $('#button').click(function(){
+            
+            $('#intext').addClass('input-error');
+            
+        
+
+        });
+    
+    });
+        
+    
+    </script>
 </body>
+    
+    
+    
 </html>
