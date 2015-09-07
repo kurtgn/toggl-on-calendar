@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Блеск</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+        <style>
+            body {
+                margin-top:60px;
+            }
+            .address_comment {
+                color: darkgrey;
+            }
+            .indented {
+                margin-left:20px;
+            }
+            .add_comment_input {
+                display:inline;
+                width:300px;
+            }
+        
+        </style>
+    </head>
+    <body>
+        
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#about">Иванов Иван Иванович</a></li>
+            <li><a href="#contact">Выход</a></li>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    
+
+    <div class="container">
+      <!-- Example row of columns -->
+        
+        <div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Внимание!</strong> У вас не оплачена уборка. Оплатите ее как можно быстрее.
+</div>
+        <div class="alert alert-info alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Замена:</strong> 15 числа вместо Fely придет Lefy. Ее телефон (926) 238-23-23.
+</div>
+      <div class="row">
+        <div class="col-md-6">
+            
+            
+            
+          <div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">История заказов</h3>
+  </div>
+  <div class="panel-body">
+    
+      
+      <nav>
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>
+                Дата
+                </th>
+                <th>
+                Название
+                </th>
+                <th>
+                Цена
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    15.05.2015 - 16.05.2015
+                </td>
+                <td>
+                    Пакет "Холостяк"
+                </td>
+                <td>
+                    6 000 р.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    15.06.2015 - 16.07.2015
+                </td>
+                <td>
+                    Пакет "Холостяк"
+                </td>
+                <td>
+                    6 000 р.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    19.10.2015
+                </td>
+                <td>
+                    Генеральная уборка
+                </td>
+                <td>
+                    4 500 р.
+                </td>
+            </tr>
+        </table>
+        
+      <a href="#" class="btn btn-success">Сделать новый заказ</a>
+      
+      
+  </div>
+</div>
+        </div>
+        <div class="col-md-6">
+            
+            
+              <div class="panel panel-warning">
+  <div class="panel-heading">
+    <h3 class="panel-title">Адреса</h3>
+  </div>
+  <div class="panel-body">
+    
+      <p><i class="glyphicon glyphicon-home"></i> Москва, ул. Покровка, д.5, кв.51</p>
+          <p class="address_comment"><i class="glyphicon glyphicon-comment"></i> 
+              Чистить люстру
+            <i class="glyphicon glyphicon-pencil"></i>
+              <i class="glyphicon glyphicon-remove"></i></p>
+            <p class="address_comment indented">Мыть пол только в прихожей
+            <i class="glyphicon glyphicon-pencil"></i>
+              <i class="glyphicon glyphicon-remove"></i></p>  
+            <p class="address_comment indented">Мыть пол только в прихоже й<i class="glyphicon glyphicon-pencil"></i>
+              <i class="glyphicon glyphicon-remove"></i></p>
+            
+            <input class="indented form-control input-xs add_comment_input" 
+                   type="text"
+                   placeholder="Добавить пожелание"
+                   >
+            <a href="#" class="btn btn-default">Ок</a>
+          <hr>
+            
+            <p><i class="glyphicon glyphicon-home"></i> Москва, ул. Покровка, д.5, кв.51</p>
+          <p class="address_comment"><i class="glyphicon glyphicon-comment"></i> 
+              Чистить люстру
+            <i class="glyphicon glyphicon-pencil"></i>
+              <i class="glyphicon glyphicon-remove"></i></p>
+            <p class="address_comment indented">Мыть пол только в прихожей
+            <i class="glyphicon glyphicon-pencil"></i>
+              <i class="glyphicon glyphicon-remove"></i></p>  
+            <p class="address_comment indented">Мыть пол только в прихоже й<i class="glyphicon glyphicon-pencil"></i>
+              <i class="glyphicon glyphicon-remove"></i></p>
+            
+            <input class="indented form-control input-xs add_comment_input" 
+                   type="text"
+                   placeholder="Добавить пожелание"
+                   >
+            <a href="#" class="btn btn-default">Ок</a>
+          <hr>
+            
+            <p><i class="glyphicon glyphicon-home"></i> Москва, ул. Покровка, д.5, кв.51</p>
+          <p class="address_comment"><i class="glyphicon glyphicon-comment"></i> 
+              Чистить люстру
+            <i class="glyphicon glyphicon-pencil"></i>
+              <i class="glyphicon glyphicon-remove"></i></p>
+            <p class="address_comment indented">Мыть пол только в прихожей
+            <i class="glyphicon glyphicon-pencil"></i>
+              <i class="glyphicon glyphicon-remove"></i></p>  
+            <p class="address_comment indented">Мыть пол только в прихоже й<i class="glyphicon glyphicon-pencil"></i>
+              <i class="glyphicon glyphicon-remove"></i></p>
+            
+            <input class="indented form-control input-xs add_comment_input" 
+                   type="text"
+                   placeholder="Добавить пожелание"
+                   >
+            <a href="#" class="btn btn-default">Ок</a>
+      
+      
+  </div>
+</div>
+            
+
+            
+       </div>
+        
+      </div>
+        
+        
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">График уборок</h3>
+  </div>
+  <div class="panel-body">
+    
+      
+      <nav>
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>
+                Адрес
+                </th>
+                <th>
+                Дата
+                </th>
+                <th>
+                Сотрудник
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Москва, ул. Покровка, д.5, кв.51
+                </td>
+                <td>
+                    25.09.2015 15:00
+                </td>
+                <td>
+                    Fely
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Москва, ул. Покровка, д.5, кв.51
+                </td>
+                <td>
+                    25.09.2015 15:00
+                </td>
+                <td>
+                    Fely
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Москва, ул. Покровка, д.5, кв.51
+                </td>
+                <td>
+                    25.09.2015 15:00
+                </td>
+                <td>
+                    Fely
+                </td>
+            </tr>
+        </table>
+        
+      
+      
+  </div>
+</div>
+        
+        
+       
+
+        
+        
+        <h2>Контактные данные</h2>
+          <p>Телефон: (123) 456-78-90 
+              <i class="glyphicon glyphicon-pencil"></i>
+              <i class="glyphicon glyphicon-remove"></i>
+            
+            </p>
+          <p>Телефон: (123) 456-78-90
+              
+              <i class="glyphicon glyphicon-pencil"></i>
+              <i class="glyphicon glyphicon-remove"></i>
+          </p>
+          <p>Телефон: (123) 456-78-90
+              <i class="glyphicon glyphicon-pencil"></i>
+              <i class="glyphicon glyphicon-remove"></i>
+          </p>
+            <p><a href="#" class="btn btn-default">+ Телефон</a></p>
+            
+            <p>Email: asjhdkajshd@ya.ru
+              <i class="glyphicon glyphicon-pencil"></i>
+          </p>
+          
+        
+        
+        
+      
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>    
+    </body>
+</html>
