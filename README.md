@@ -4,4 +4,6 @@ This is a serverless app, and all API manipulations are done in your browses.
 
 Just download or open this page, enter your API key and press "Submit".
 
-![example](http://image.prntscr.com/image/3d7d38d3370e43c194ea1dca6009df9f.png)
+# This is how it looks like:
+
+![example](http://image.prntscr.com/image/8911218ec08c4472bf8c10a921229198.png)
