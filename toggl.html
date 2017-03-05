@@ -55,6 +55,31 @@
         return "Basic " + hash;
     }
 
+    function storageAvailable(type) {
+        try {
+            var storage = window[type],
+                    x = '__storage_test__';
+            storage.setItem(x, x);
+            storage.removeItem(x);
+            return true;
+        }
+        catch(e) {
+            return false;
+        }
+    }
+
+    if (storageAvailable('localStorage')) {
+        var stored_api_key = localStorage.getItem('stored_api_key'),
+            stored_workspace_id = localStorage.getItem('stored_workspace_id');
+        if(stored_api_key){
+            $('#api_key').val(stored_api_key);
+        }
+        if(stored_workspace_id){
+            $('#workspace_id').val(stored_workspace_id);
+        }
+    }
+
+
 
 
     $('#calendar').fullCalendar({
@@ -68,8 +93,15 @@
 
         console.log('fetching page ' + page_num);
 
-        var api_key = $('#api_key').val();
-        var workspace_id = $('#workspace_id').val();
+        var api_key = $('#api_key').val(),
+            workspace_id = $('#workspace_id').val();
+
+        if (storageAvailable('localStorage')) {
+            localStorage.setItem('stored_api_key', api_key);
+            localStorage.setItem('stored_workspace_id', workspace_id);
+        }
+
+
 
         $.get({
             url: 'https://toggl.com/reports/api/v2/details',
