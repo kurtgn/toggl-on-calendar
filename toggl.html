@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <title></title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js'></script>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.js"></script>
+
+
     <style>
         #calendar {
             margin:auto;
@@ -20,32 +28,62 @@
 </head>
 <body>
 
-<div class="row">
-    <div class="col-sm-8 col-sm-offset-1">
-        <form class="form-horizontal">
-            <div class="form-group">
-                <label for="api_key" class="col-sm-2 control-label">API key</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="api_key">
+<form class="form-horizontal">
+
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-1">
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <div class="form-group">
+                        <label for="api_key" class="col-sm-4 control-label">API key</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="api_key">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="workspace_id" class="col-sm-4 control-label">Workspace ID</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="workspace_id">
+                            <span class="help-block">Your workspace ID can be found <a href="http://prnt.sc/efy3px">here</a></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <button type="button" id="submit_api_btn" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="workspace_id" class="col-sm-2 control-label">Workspace ID</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="workspace_id">
-                    <span class="help-block">Your workspace ID can be found <a href="http://prnt.sc/efy3px">here</a></span>
+                <div class="col-sm-6">
+
+                    <div class="form-group">
+                        <label for="date_start" class="col-sm-4 control-label">Start date</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="date_start">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="date_end" class="col-sm-4 control-label">End date</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="date_end">
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
 
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="button" id="submit_api_btn" class="btn btn-default">Submit</button>
-                </div>
-            </div>
-        </form>
 
+        </div>
     </div>
-</div>
+
+
+
+</form>
+
+
 <div id="calendar"></div>
 
 <script>
@@ -70,7 +108,7 @@
 
     if (storageAvailable('localStorage')) {
         var stored_api_key = localStorage.getItem('stored_api_key'),
-            stored_workspace_id = localStorage.getItem('stored_workspace_id');
+                stored_workspace_id = localStorage.getItem('stored_workspace_id');
         if(stored_api_key){
             $('#api_key').val(stored_api_key);
         }
@@ -80,6 +118,13 @@
     }
 
 
+    $( "#date_start, #date_end" ).datepicker({
+        dateFormat: "dd.mm.yy"
+    });
+
+    $('#date_start').val(
+            moment().subtract(10, 'days').format('DD.MM.YYYY')
+    );
 
 
     $('#calendar').fullCalendar({
@@ -91,24 +136,37 @@
 
     function fetch_page_display(page_num){
 
-        console.log('fetching page ' + page_num);
+
 
         var api_key = $('#api_key').val(),
-            workspace_id = $('#workspace_id').val();
+                workspace_id = $('#workspace_id').val(),
+                date_start = $('#date_start').val(),
+                date_end = $('#date_end').val();
 
         if (storageAvailable('localStorage')) {
             localStorage.setItem('stored_api_key', api_key);
             localStorage.setItem('stored_workspace_id', workspace_id);
         }
 
+        if(!date_start){
+            new PNotify({ text: 'Set start date.', type: 'warning', styling: 'bootstrap3', delay: 1000});
+            return
+        }
 
+        new PNotify({text: 'fetching page ' + page_num, type: 'info', styling: 'bootstrap3', delay: 500 });
+        console.log('fetching page ' + page_num);
+
+
+        var since = moment(date_start, 'DD.MM.YYYY').format(),
+                until = date_end ? moment(date_end, 'DD.MM.YYYY').format() : null;
 
         $.get({
             url: 'https://toggl.com/reports/api/v2/details',
             data: {
                 user_agent: '123',
                 workspace_id: workspace_id,
-                since: moment().subtract(30, 'days').format(),
+                since: since,
+                until: until,
                 page: page_num
             },
             beforeSend: function (xhr) {
@@ -126,6 +184,8 @@
                 });
                 if(result.data.length){
                     fetch_page_display(page_num+1)
+                } else {
+                    new PNotify({ text: 'Finished!', type: 'success', styling: 'bootstrap3', delay: 2000});
                 }
 
 
