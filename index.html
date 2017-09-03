@@ -131,7 +131,14 @@
         defaultView: 'agendaWeek',
         firstDay: 1,
         scrollTime: '08:00:00',
-        nowIndicator: true
+        nowIndicator: true,
+        businessHours: {
+            // days of week. an array of zero-based day of week integers (0=Sunday)
+            dow: [1, 2, 3, 4, 5],
+
+            start: '09:00',
+            end: '19:00'
+        }
     });
 
     function fetch_page_display(page_num, notice){
