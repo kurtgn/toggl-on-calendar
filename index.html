@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js'></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        #calendar {
+            margin:auto;
+            width:80%;
+        }
+        body {
+            padding-top:80px
+        }
+    </style>
+</head>
+<body>
+
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-1">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="api_key" class="col-sm-2 control-label">API key</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="api_key">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="workspace_id" class="col-sm-2 control-label">Workspace ID</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="workspace_id">
+                    <span class="help-block">Your workspace ID can be found <a href="http://prnt.sc/efy3px">here</a></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" id="submit_api_btn" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+<div id="calendar"></div>
+
+<script>
+    function make_base_auth(user, password) {
+        var tok = user + ':' + password;
+        var hash = Base64.encode(tok);
+        return "Basic " + hash;
+    }
+
+    function storageAvailable(type) {
+        try {
+            var storage = window[type],
+                    x = '__storage_test__';
+            storage.setItem(x, x);
+            storage.removeItem(x);
+            return true;
+        }
+        catch(e) {
+            return false;
+        }
+    }
+
+    if (storageAvailable('localStorage')) {
+        var stored_api_key = localStorage.getItem('stored_api_key'),
+            stored_workspace_id = localStorage.getItem('stored_workspace_id');
+        if(stored_api_key){
+            $('#api_key').val(stored_api_key);
+        }
+        if(stored_workspace_id){
+            $('#workspace_id').val(stored_workspace_id);
+        }
+    }
+
+
+
+
+    $('#calendar').fullCalendar({
+        defaultView: 'agendaWeek',
+        firstDay: 1,
+        scrollTime: '08:00:00',
+        nowIndicator: true
+    });
+
+    function fetch_page_display(page_num){
+
+        console.log('fetching page ' + page_num);
+
+        var api_key = $('#api_key').val(),
+            workspace_id = $('#workspace_id').val();
+
+        if (storageAvailable('localStorage')) {
+            localStorage.setItem('stored_api_key', api_key);
+            localStorage.setItem('stored_workspace_id', workspace_id);
+        }
+
+
+
+        $.get({
+            url: 'https://toggl.com/reports/api/v2/details',
+            data: {
+                user_agent: '123',
+                workspace_id: workspace_id,
+                since: moment().subtract(30, 'days').format(),
+                page: page_num
+            },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader ("Authorization", "Basic " + btoa(api_key + ":" + 'api_token'));
+            },
+            success: function (result) {
+                console.log('got ' + result.data.length + ' entries.')
+                result.data.forEach(function(item, idx){
+                    var title = item.description ? item.description : item.project;
+                    $('#calendar').fullCalendar('addEventSource',[{
+                        title: title,
+                        start: item.start,
+                        end: item.end
+                    }]);
+                });
+                if(result.data.length){
+                    fetch_page_display(page_num+1)
+                }
+
+
+            }
+        })
+    }
+
+    $('#submit_api_btn').click(function(e){
+        e.preventDefault();
+        fetch_page_display(1);
+    });
+
+
+</script>
+
+</body>
+</html>
