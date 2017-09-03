@@ -134,7 +134,7 @@
         nowIndicator: true
     });
 
-    function fetch_page_display(page_num){
+    function fetch_page_display(page_num, notice){
 
 
 
@@ -149,13 +149,17 @@
         }
 
         if(!date_start){
-            new PNotify({ text: 'Set start date.', type: 'warning', styling: 'bootstrap3', delay: 1000});
+            new PNotify({ text: 'Set start date.', type: 'warning', styling: 'bootstrap3', delay: 10000});
             return
         }
 
-        new PNotify({text: 'fetching page ' + page_num, type: 'info', styling: 'bootstrap3', delay: 500 });
-        console.log('fetching page ' + page_num);
+        if(typeof(notice)=='undefined'){
+            var notice = new PNotify({text: 'fetching page ' + page_num, type: 'info', styling: 'bootstrap3', hide: false });
+        } else {
+            notice.update({text: 'fetching page ' + page_num+ '...'});
+        }
 
+        console.log('fetching page ' + page_num);
 
         var since = moment(date_start, 'DD.MM.YYYY').format(),
                 until = date_end ? moment(date_end, 'DD.MM.YYYY').format() : null;
@@ -173,7 +177,7 @@
                 xhr.setRequestHeader ("Authorization", "Basic " + btoa(api_key + ":" + 'api_token'));
             },
             success: function (result) {
-                console.log('got ' + result.data.length + ' entries.')
+                console.log('got ' + result.data.length + ' entries.');
                 result.data.forEach(function(item, idx){
                     var title = item.description ? item.description : item.project;
                     $('#calendar').fullCalendar('addEventSource',[{
@@ -183,11 +187,10 @@
                     }]);
                 });
                 if(result.data.length){
-                    fetch_page_display(page_num+1)
+                    fetch_page_display(page_num+1, notice);
                 } else {
-                    new PNotify({ text: 'Finished!', type: 'success', styling: 'bootstrap3', delay: 2000});
+                    notice.update({ text: 'Finished!', type: 'success', styling: 'bootstrap3', delay: 2000, hide: true});
                 }
-
 
             }
         })
